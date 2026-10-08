@@ -14,11 +14,6 @@ public class Agenda {
         this.proximoId = 1;
     }
 
-    /**
-     * Agrega un turno a la agenda y actualiza el próximo id disponible.
-     * Lanza IllegalArgumentException si el turno, su paciente o su doctor son null,
-     * si el id ya existe o si el doctor ya tiene un turno activo en esa fecha y hora.
-     */
     public void agregarTurno(Turno turno) {
         if (turno == null) {
             throw new IllegalArgumentException("El turno no puede ser nulo.");
@@ -42,20 +37,12 @@ public class Agenda {
         }
     }
 
-    /**
-     * Crea un turno PENDIENTE con el próximo id disponible, lo agrega y lo devuelve.
-     * Lanza IllegalArgumentException en los mismos casos que agregarTurno.
-     */
     public Turno crearTurno(Paciente paciente, Doctor doctor, String fecha, String hora) {
         Turno turno = new Turno(proximoId, paciente, doctor, fecha, hora);
         agregarTurno(turno);
         return turno;
     }
 
-    /**
-     * Pasa un turno de PENDIENTE a CONFIRMADO.
-     * Lanza IllegalArgumentException si no existe e IllegalStateException si no está PENDIENTE.
-     */
     public void confirmarTurno(int id) {
         Turno turno = buscarOFallar(id);
         if (turno.getEstado() != EstadoTurno.PENDIENTE) {
@@ -65,10 +52,6 @@ public class Agenda {
         turno.setEstado(EstadoTurno.CONFIRMADO);
     }
 
-    /**
-     * Pasa un turno PENDIENTE o CONFIRMADO a CANCELADO.
-     * Lanza IllegalArgumentException si no existe e IllegalStateException si ya está ATENDIDO o CANCELADO.
-     */
     public void cancelarTurno(int id) {
         Turno turno = buscarOFallar(id);
         if (turno.getEstado() != EstadoTurno.PENDIENTE && turno.getEstado() != EstadoTurno.CONFIRMADO) {
@@ -78,10 +61,6 @@ public class Agenda {
         turno.setEstado(EstadoTurno.CANCELADO);
     }
 
-    /**
-     * Pasa un turno de CONFIRMADO a ATENDIDO.
-     * Lanza IllegalArgumentException si no existe e IllegalStateException si no está CONFIRMADO.
-     */
     public void marcarComoAtendido(int id) {
         Turno turno = buscarOFallar(id);
         if (turno.getEstado() != EstadoTurno.CONFIRMADO) {
@@ -91,9 +70,6 @@ public class Agenda {
         turno.setEstado(EstadoTurno.ATENDIDO);
     }
 
-    /**
-     * Devuelve los turnos en una lista de solo lectura; modificarla lanza UnsupportedOperationException.
-     */
     public List<Turno> getTurnos() {
         return Collections.unmodifiableList(turnos);
     }

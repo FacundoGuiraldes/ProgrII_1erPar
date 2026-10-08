@@ -24,7 +24,7 @@
     <turno id="2">
         <fecha>11/09/2026</fecha>
         <hora>10:30</hora>
-        <estado>PENDIENTE</estado>
+        <estado>CANCELADO</estado>
         <paciente>
             <nombre>Juan</nombre>
             <apellido>Pérez</apellido>
@@ -45,6 +45,27 @@
     <turno id="3">
         <fecha>12/09/2026</fecha>
         <hora>14:00</hora>
+        <estado>PENDIENTE</estado>
+        <paciente>
+            <nombre>Juan</nombre>
+            <apellido>Pérez</apellido>
+            <dni>30111222</dni>
+            <email>juan@mail.com</email>
+            <obraSocial>OSDE</obraSocial>
+            <numeroAfiliado>A0001</numeroAfiliado>
+        </paciente>
+        <doctor>
+            <nombre>Laura</nombre>
+            <apellido>Gómez</apellido>
+            <dni>28555666</dni>
+            <email>laura@mail.com</email>
+            <matricula>MP1234</matricula>
+            <especialidad>Cardiología</especialidad>
+        </doctor>
+    </turno>
+    <turno id="4">
+        <fecha>11/09/2026</fecha>
+        <hora>10:30</hora>
         <estado>PENDIENTE</estado>
         <paciente>
             <nombre>Juan</nombre>

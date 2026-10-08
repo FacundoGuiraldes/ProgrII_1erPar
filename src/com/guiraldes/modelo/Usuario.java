@@ -1,6 +1,6 @@
 package com.guiraldes.modelo;
 
-public class Usuario {
+public abstract class Usuario {
     private String nombre;
     private String apellido;
     private String dni;
@@ -17,7 +17,8 @@ public class Usuario {
         this.email = email;
         this.password = password;
     }
-        public String getNombre() {
+
+    public String getNombre() {
         return nombre;
     }
 
@@ -56,11 +57,15 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
-        public String mostrarDatos() {
+
+    public String mostrarDatos() {
         return "Nombre: " + nombre + " " + apellido + " | DNI: " + dni + " | Email: " + email;
     }
 
     public boolean validarPassword(String passwordIngresada) {
+        if (this.password == null) {
+            return false;
+        }
         return this.password.equals(passwordIngresada);
     }
 }

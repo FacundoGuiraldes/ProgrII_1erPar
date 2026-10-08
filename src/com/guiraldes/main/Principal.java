@@ -27,7 +27,7 @@ public class Principal {
         secretaria.setEmail("ana@mail.com");
         secretaria.setPassword("xyz");
         secretaria.setLegajo("SEC001");
-        secretaria.setTurno("Mañana");
+        secretaria.setTurnoLaboral("Mañana");
 
         System.out.println(paciente.mostrarDatos());
         System.out.println(doctor.mostrarDatos());

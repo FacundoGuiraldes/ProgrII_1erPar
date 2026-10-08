@@ -2,17 +2,17 @@ package com.guiraldes.modelo;
 
 public class Secretaria extends Usuario {
     private String legajo;
-    private String turno;
+    private String turnoLaboral;
 
     public Secretaria() {
         super();
     }
 
     public Secretaria(String nombre, String apellido, String dni, String email, String password,
-                       String legajo, String turno) {
+                       String legajo, String turnoLaboral) {
         super(nombre, apellido, dni, email, password);
         this.legajo = legajo;
-        this.turno = turno;
+        this.turnoLaboral = turnoLaboral;
     }
 
     public String getLegajo() {
@@ -23,17 +23,17 @@ public class Secretaria extends Usuario {
         this.legajo = legajo;
     }
 
-    public String getTurno() {
-        return turno;
+    public String getTurnoLaboral() {
+        return turnoLaboral;
     }
 
-    public void setTurno(String turno) {
-        this.turno = turno;
+    public void setTurnoLaboral(String turnoLaboral) {
+        this.turnoLaboral = turnoLaboral;
     }
 
     @Override
     public String mostrarDatos() {
-        return super.mostrarDatos() + " | Legajo: " + legajo + " | Turno laboral: " + turno;
+        return super.mostrarDatos() + " | Legajo: " + legajo + " | Turno laboral: " + turnoLaboral;
     }
 
     public String asignarTurno(String paciente, String doctor, String fecha) {

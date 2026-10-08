@@ -33,17 +33,19 @@ public class Principal {
         System.out.println(doctor.mostrarDatos());
         System.out.println(secretaria.mostrarDatos());
 
-        System.out.println(paciente.solicitarTurno("Cardiología", "10/09/2026"));
-        System.out.println(doctor.atenderTurno("Juan Pérez", "10/09/2026"));
-        System.out.println(secretaria.asignarTurno("Juan Pérez", "Dra. Gómez", "10/09/2026"));
+        Agenda agenda = new Agenda();
+
+        System.out.println(paciente.solicitarTurno(agenda, doctor, "10/09/2026", "09:00"));
+        System.out.println(secretaria.asignarTurno(agenda, paciente, doctor, "11/09/2026", "10:30"));
+        agenda.agregarTurno(new Turno(3, paciente, doctor, "12/09/2026", "14:00"));
+
+        secretaria.confirmarTurno(agenda, 1);
+        System.out.println(agenda.buscarTurnoPorIdIterativo(1));
+        doctor.atenderTurno(agenda, 1);
+        System.out.println(agenda.buscarTurnoPorIdIterativo(1));
 
         paciente.enviarNotificacion("Su turno fue confirmado.");
         doctor.enviarNotificacion("Tiene un nuevo turno asignado.");
-
-        Agenda agenda = new Agenda();
-        agenda.agregarTurno(new Turno(1, paciente, doctor, "10/09/2026", "09:00"));
-        agenda.agregarTurno(new Turno(2, paciente, doctor, "11/09/2026", "10:30"));
-        agenda.agregarTurno(new Turno(3, paciente, doctor, "12/09/2026", "14:00"));
 
         System.out.println("--- Búsqueda recursiva ---");
         System.out.println(agenda.buscarTurnoPorIdRecursivo(2));

@@ -36,7 +36,15 @@ public class Secretaria extends Usuario {
         return super.mostrarDatos() + " | Legajo: " + legajo + " | Turno laboral: " + turnoLaboral;
     }
 
-    public String asignarTurno(String paciente, String doctor, String fecha) {
-        return "Turno asignado: " + paciente + " con " + doctor + " el " + fecha;
+    public Turno asignarTurno(Agenda agenda, Paciente paciente, Doctor doctor, String fecha, String hora) {
+        return agenda.crearTurno(paciente, doctor, fecha, hora);
+    }
+
+    public void confirmarTurno(Agenda agenda, int idTurno) {
+        agenda.confirmarTurno(idTurno);
+    }
+
+    public void cancelarTurno(Agenda agenda, int idTurno) {
+        agenda.cancelarTurno(idTurno);
     }
 }

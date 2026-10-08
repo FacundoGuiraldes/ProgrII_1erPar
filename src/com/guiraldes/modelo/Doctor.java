@@ -1,5 +1,7 @@
 package com.guiraldes.modelo;
 
+import java.util.Objects;
+
 public class Doctor extends Usuario implements Notificable {
     private String matricula;
     private String especialidad;
@@ -36,8 +38,15 @@ public class Doctor extends Usuario implements Notificable {
         return super.mostrarDatos() + " | Matrícula: " + matricula + " | Especialidad: " + especialidad;
     }
 
-    public String atenderTurno(String paciente, String fecha) {
-        return "Dr/a. " + getApellido() + " atendió a " + paciente + " el " + fecha;
+    public void atenderTurno(Agenda agenda, int idTurno) {
+        Turno turno = agenda.buscarTurnoPorIdIterativo(idTurno);
+        if (turno == null) {
+            throw new IllegalArgumentException("No existe un turno con el id " + idTurno + ".");
+        }
+        if (!Objects.equals(matricula, turno.getDoctor().getMatricula())) {
+            throw new IllegalArgumentException("El turno pertenece a otro doctor.");
+        }
+        agenda.marcarComoAtendido(idTurno);
     }
 
     @Override

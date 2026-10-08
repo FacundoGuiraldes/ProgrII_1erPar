@@ -36,9 +36,8 @@ public class Paciente extends Usuario implements Notificable {
         return super.mostrarDatos() + " | Obra Social: " + obraSocial + " | N° Afiliado: " + numeroAfiliado;
     }
 
-    public String solicitarTurno(String especialidad, String fecha) {
-        return "Turno solicitado por " + getNombre() + " " + getApellido() + 
-               " para " + especialidad + " el " + fecha;
+    public Turno solicitarTurno(Agenda agenda, Doctor doctor, String fecha, String hora) {
+        return agenda.crearTurno(this, doctor, fecha, hora);
     }
 
     @Override

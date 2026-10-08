@@ -31,7 +31,11 @@ public class Agenda {
             throw new IllegalArgumentException("El doctor ya tiene un turno el " + turno.getFecha()
                     + " a las " + turno.getHora() + ".");
         }
-        turnos.add(turno);
+        int posicion = 0;
+        while (posicion < turnos.size() && turnos.get(posicion).getId() < turno.getId()) {
+            posicion++;
+        }
+        turnos.add(posicion, turno);
         if (turno.getId() >= proximoId) {
             proximoId = turno.getId() + 1;
         }
@@ -74,6 +78,16 @@ public class Agenda {
         return Collections.unmodifiableList(turnos);
     }
 
+    public int contarTurnosPorEstado(EstadoTurno estado) {
+        int cantidad = 0;
+        for (Turno turno : turnos) {
+            if (turno.getEstado() == estado) {
+                cantidad++;
+            }
+        }
+        return cantidad;
+    }
+
     private Turno buscarOFallar(int id) {
         Turno turno = buscarTurnoPorIdIterativo(id);
         if (turno == null) {
@@ -99,17 +113,22 @@ public class Agenda {
     }
 
     public Turno buscarTurnoPorIdRecursivo(int id) {
-        return buscarTurnoPorIdRecursivo(this.turnos, id, 0);
+        return buscarTurnoPorIdRecursivo(id, 0, turnos.size() - 1);
     }
 
-    private Turno buscarTurnoPorIdRecursivo(List<Turno> turnos, int id, int indice) {
-        if (indice >= turnos.size()) {
+    private Turno buscarTurnoPorIdRecursivo(int id, int inicio, int fin) {
+        if (inicio > fin) {
             return null;
         }
-        if (turnos.get(indice).getId() == id) {
-            return turnos.get(indice);
+        int medio = inicio + (fin - inicio) / 2;
+        Turno turnoMedio = turnos.get(medio);
+        if (turnoMedio.getId() == id) {
+            return turnoMedio;
         }
-        return buscarTurnoPorIdRecursivo(turnos, id, indice + 1);
+        if (id < turnoMedio.getId()) {
+            return buscarTurnoPorIdRecursivo(id, inicio, medio - 1);
+        }
+        return buscarTurnoPorIdRecursivo(id, medio + 1, fin);
     }
 
     public Turno buscarTurnoPorIdIterativo(int id) {

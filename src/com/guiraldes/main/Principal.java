@@ -5,6 +5,7 @@ import com.guiraldes.modelo.Doctor;
 import com.guiraldes.modelo.Secretaria;
 import com.guiraldes.modelo.Turno;
 import com.guiraldes.modelo.Agenda;
+import com.guiraldes.modelo.EstadoTurno;
 import com.guiraldes.persistencia.PersistenciaTexto;
 import com.guiraldes.persistencia.PersistenciaXML;
 
@@ -54,6 +55,11 @@ public class Principal {
         System.out.println("--- Búsqueda iterativa ---");
         System.out.println(agenda.buscarTurnoPorIdIterativo(2));
         System.out.println(agenda.buscarTurnoPorIdIterativo(99));
+
+        System.out.println("--- Turnos por estado ---");
+        for (EstadoTurno estado : EstadoTurno.values()) {
+            System.out.println(estado + ": " + agenda.contarTurnosPorEstado(estado));
+        }
 
         try {
             System.out.println("--- Persistencia en texto ---");

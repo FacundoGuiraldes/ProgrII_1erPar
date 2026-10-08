@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<agenda>
+    <turno id="1">
+        <fecha>10/09/2026</fecha>
+        <hora>09:00</hora>
+        <paciente>
+            <nombre>Juan</nombre>
+            <apellido>Pérez</apellido>
+            <dni>30111222</dni>
+        </paciente>
+        <doctor>
+            <nombre>Laura</nombre>
+            <apellido>Gómez</apellido>
+            <matricula>MP1234</matricula>
+        </doctor>
+    </turno>
+    <turno id="2">
+        <fecha>11/09/2026</fecha>
+        <hora>10:30</hora>
+        <paciente>
+            <nombre>Juan</nombre>
+            <apellido>Pérez</apellido>
+            <dni>30111222</dni>
+        </paciente>
+        <doctor>
+            <nombre>Laura</nombre>
+            <apellido>Gómez</apellido>
+            <matricula>MP1234</matricula>
+        </doctor>
+    </turno>
+    <turno id="3">
+        <fecha>12/09/2026</fecha>
+        <hora>14:00</hora>
+        <paciente>
+            <nombre>Juan</nombre>
+            <apellido>Pérez</apellido>
+            <dni>30111222</dni>
+        </paciente>
+        <doctor>
+            <nombre>Laura</nombre>
+            <apellido>Gómez</apellido>
+            <matricula>MP1234</matricula>
+        </doctor>
+    </turno>
+</agenda>

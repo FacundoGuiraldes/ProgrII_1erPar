@@ -1,0 +1,7 @@
+# Archivos compilados
+out/
+bin/
+*.class
+
+# Archivos comprimidos
+*.zip

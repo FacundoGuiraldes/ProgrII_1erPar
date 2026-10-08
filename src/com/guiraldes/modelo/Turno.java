@@ -2,7 +2,7 @@ package com.guiraldes.modelo;
 
 public class Turno {
 
-    private int id;
+    private final int id;
     private Paciente paciente;
     private Doctor doctor;
     private String fecha;
@@ -24,10 +24,6 @@ public class Turno {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Paciente getPaciente() {

@@ -1,5 +1,5 @@
 # Contexto
-Parcial 1 de Programación II (UCES, prof. Mario Detke). Proyecto: Sistema de Turnos Médicos en Java, paquetes com.guiraldes.main y com.guiraldes.modelo. El proyecto lo desarrolla Facundo (estudiante de primer año de la Tecnicatura) y debe entregarse comprimido (.zip) junto con un PDF. La codificación vale 5 de 10 puntos y se evalúan buenas prácticas de programación.
+Parcial 1 de Programación II (UCES, prof. Mario Detke). Proyecto: Sistema de Turnos Médicos en Java, paquetes com.guiraldes.main, com.guiraldes.modelo y com.guiraldes.persistencia (PersistenciaTexto y PersistenciaXML). El proyecto lo desarrolla Facundo (estudiante de primer año de la Tecnicatura) y debe entregarse comprimido (.zip) junto con un PDF. La codificación vale 5 de 10 puntos y se evalúan buenas prácticas de programación.
 
 # Cómo compilar y ejecutar
 mkdir -p out
@@ -12,7 +12,7 @@ java -Dfile.encoding=UTF-8 -cp out com.guiraldes.main.Principal
 - Nivel de primer año: usar solo lo visto en la materia (clases, herencia, abstract, interfaces, enum, ArrayList, recursividad, ficheros de texto y XML con DOM, try-with-resources). Evitar streams, records, lambdas y librerías externas.
 - No escribir comentarios en el código. Nombres en español, camelCase.
 - El proyecto tiene que compilar sin errores ni warnings en cualquier momento.
-- Después de correr Principal, restaurar con git los archivos de datos (.txt y .xml) si cambiaron sin querer.
+- Los archivos de datos están regenerados con el formato actual; si cambian al correr Principal, avisar antes de commitear.
 
 # Plan de cambios (se implementan después, de a uno, cuando yo lo pida)
 1. Usuario pasa a abstract; validarPassword seguro ante null.

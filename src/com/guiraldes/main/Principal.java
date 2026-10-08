@@ -5,8 +5,8 @@ import com.guiraldes.modelo.Doctor;
 import com.guiraldes.modelo.Secretaria;
 import com.guiraldes.modelo.Turno;
 import com.guiraldes.modelo.Agenda;
-import com.guiraldes.modelo.PersistenciaTexto;
-import com.guiraldes.modelo.PersistenciaXML;
+import com.guiraldes.persistencia.PersistenciaTexto;
+import com.guiraldes.persistencia.PersistenciaXML;
 
 import java.util.Arrays;
 import java.util.List;

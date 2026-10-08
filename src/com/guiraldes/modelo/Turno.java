@@ -3,10 +3,10 @@ package com.guiraldes.modelo;
 public class Turno {
 
     private final int id;
-    private Paciente paciente;
-    private Doctor doctor;
-    private String fecha;
-    private String hora;
+    private final Paciente paciente;
+    private final Doctor doctor;
+    private final String fecha;
+    private final String hora;
     private EstadoTurno estado;
 
     public Turno(int id, Paciente paciente, Doctor doctor, String fecha, String hora) {
@@ -30,39 +30,23 @@ public class Turno {
         return paciente;
     }
 
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
-    }
-
     public Doctor getDoctor() {
         return doctor;
-    }
-
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
     }
 
     public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
     public String getHora() {
         return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
     }
 
     public EstadoTurno getEstado() {
         return estado;
     }
 
-    public void setEstado(EstadoTurno estado) {
+    void setEstado(EstadoTurno estado) {
         this.estado = estado;
     }
 

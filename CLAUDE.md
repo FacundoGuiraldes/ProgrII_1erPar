@@ -10,7 +10,7 @@ java -Dfile.encoding=UTF-8 -cp out com.guiraldes.main.Principal
 - Trabajar de a un cambio por vez y esperar confirmación antes de pasar al siguiente.
 - No tocar código que no esté en el plan. Entregar archivos completos, no fragmentos.
 - Nivel de primer año: usar solo lo visto en la materia (clases, herencia, abstract, interfaces, enum, ArrayList, recursividad, ficheros de texto y XML con DOM, try-with-resources). Evitar streams, records, lambdas y librerías externas.
-- Comentarios en español, breves y útiles. Nombres en español, camelCase.
+- No agregar comentarios al código. Nombres en español, camelCase.
 - El proyecto tiene que compilar sin errores ni warnings en cualquier momento.
 - Después de correr Principal, restaurar con git los archivos de datos (.txt y .xml) si cambiaron sin querer.
 
